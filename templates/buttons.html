@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommendation System</title>
+    <link rel="stylesheet" href="/static/button_style.css">
+    <style>
+       
+</style>
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <div class="logo">
+                <img src="./static/img2.png" alt="">
+                <span>Vybify.com</span>
+            </div>
+    
+        </nav>
+
+        <div class="content">
+            <!-- <h1 class="slide-left">Our <br> Website</h1>
+            <p class="slide-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <div class="links slide-left"> -->
+            <div class="links slide-left">
+                    <h1 style="font-family:Bio-Rhyme; color: bisque;margin:40px;font:40px; font-size:70px">
+                        <div class="container">
+                            <div class="row">
+                              <div class="col-md-12 text-center">
+                                <div class="output" >
+                                    {% if final_output %}
+                                    <h2 class="animate-charcter">You look {{final_output}}</h2>
+                                </div>
+                                <h3 class="animate-charcter"><i>"Let the rhythm of music guide you through life's ups and downs. Our music recommendation system is your companion on this emotional adventure."<i><br> <br>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                    {% endif %}
+                
+                    <div class="links slide-left">
+                        <h3 style="color:white"><i>ENJOY YOUR MUSIC NOW!!<i></h3><br> <br>
+                <a href="http://localhost:5000/songs/{{final_output}}" class="btn">SUGGEST SONGS</a>
+            </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angry_Songs</title>
+    <!-- <link rel="stylesheet" href="happy.css"> -->
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body{
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        /* background-image: linear-gradient(rgba(192, 190, 236, 0.5),rgba(224, 224, 235, 0.5)),url(Images/img4.png);
+        background-size: cover;
+        background-repeat: no-repeat; */
+    }
+
+    img{
+        width: 300px;
+        height: auto;
+        margin: 5px;
+        border: 6px double white;
+    }   
+
+    .img{
+        width: 500px;
+        height: 500px;
+        border: 4px solid black;
+        margin: 5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+    }
+    .header{
+        width: 100%;
+        height: 100vh;
+        background-image: url(../static/bgg.jpg);
+        background-position: center;
+        background-size: cover;
+        overflow-x: hidden;
+        justify-content: center;
+        text-align: center;
+    }
+    input {
+        font: inherit;
+        padding: 10px;
+
+      }
+      #text{
+        color:white;
+        font-family:"cursive"
+      }
+    .box{
+        box-shadow: 0 0 20px 2px rgba(0,0,0,0.1);
+        transition: 1s;
+    }
+    .box img:hover{
+        transform: scale(1.1);
+        z-index: 2;
+    }
+      .btn:hover{
+        background-color: rgb(0, 195, 255);
+    }
+    .btn{
+        border: 2px solid #fff;
+        padding: 10px 35px;
+        border-radius: 30px;
+        margin-right: 15px;
+        font-weight: 700;
+    }
+    .song-profile {
+            display: inline-block;
+            width: 300px;
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .song-profile img {
+            width: 100%;
+            height: auto;
+            border: 6px double white;
+        }
+
+        .song-profile p {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .song-profile a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        select
+    {
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid ;
+        border-radius: 5px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="box" id="songsContainer">
+            <br><br>
+            <select id="languageFilter">
+                <option value="">All</option>
+                <option value="tamil">Tamil</option>
+                <option value="hindi">Hindi</option>
+                <option value="telugu">Telugu</option>
+                <option value="malayalam">Malayalam</option>
+                <!-- Add more options as needed -->
+            </select>
+            <br><br>
+            <label style="font-size: 30px" id="text" for="artistFilter">Artist Name:</label>
+            <input type="text" id="artistFilter" placeholder="Artist Name"><br><br>
+           <!-- <label style="font-size: 30px" id="text" for="yearFilter">Year:</label>
+            <input type="text" id="yearFilter" placeholder="Year (e.g., 90s, 80s, 20s)"><br><br>-->
+            <button onclick="filterSongs()" class="btn">Filter</button><br><br>
+            <div class="box songs-container" id="songsContainer">
+             <!--  <div class="song-profile">
+                    <a href="https://open.spotify.com/track/3SglaOPDd7NRathWQmjFfY" data-lang="hindi" data-artist="Siddharth Basrur" data-year="20s">
+                        <img src="../static/Angry_Songs/get1.jpg" alt="Song 1">
+                        <p>Artist: Siddharth Basrur</p>
+                        <p><a href="https://en.wikipedia.org/wiki/Siddharth_Basrur" target="_blank">Wikipedia</a></p>
+                    </a>
+                </div>
+                <div class="song-profile">
+                    <a href="https://open.spotify.com/track/6d1VAGIsaxCDMaQfVdLtRC" data-lang="hindi" data-artist="Diviya Kumar" data-year="90s">
+                        <img src="../static/Angry_Songs/get3.jpg" alt="Song 2">
+                        <p>Artist: Diviya Kumar</p>
+                        <p><a href="https://en.wikipedia.org/wiki/Divya_Kumar_(singer)" target="_blank">Wikipedia</a></p>
+                    </a>
+                </div>
+             
+            </div>
+        </div>
+    </div>-->
+                <a href="https://open.spotify.com/track/6d1VAGIsaxCDMaQfVdLtRC"data-lang="hindi" data-artist="Diviya Kumar" data-year="90s"><img src="../static/Angry_Songs/get3.jpg"></a>
+                <a href="https://open.spotify.com/track/4aO9pvX2kTJTdmJqc0YRsr"data-lang="hindi" data-artist="Ananya Bhat" data-year="80s"><img src="../static/Angry_Songs/get4.jpg"></a>
+                <a href="https://open.spotify.com/track/3pjZQfBShK7O01QvtQwmcg"data-lang="hindi" data-artist="Vishal Dadlani" data-year="80s"><img src="../static/Angry_Songs/get5.jpeg"></a>
+                <a href="https://open.spotify.com/track/0Bz7dfqPY4JOGZO3O1j8Wh"data-lang="hindi" data-artist="Pritam" data-year="80s"><img src="../static/Angry_Songs/get6.jpg"></a>
+
+                <a href="https://open.spotify.com/track/7rMqbvNImA6wy8lxlNUMmj"data-lang="hindi" data-artist="Mithoon" data-year="20s"><img src="../static/Angry_Songs/get7.jpg"></a>
+                <a href="https://open.spotify.com/track/2dZyFNtUz3IIBzUZmSu5z8"data-lang="hindi" data-artist="Pritam" data-year="20s"><img src="../static/Angry_Songs/get8.jpg"></a>
+                <a href="https://open.spotify.com/track/2BOY77LvMTUOfLcnfFAJGl"data-lang="hindi" data-artist="Sukhwinder Singh"data-year="20s"><img src="../static/Angry_Songs/get9.jpg"></a>
+                <a href="https://open.spotify.com/track/1NU7wCHSRAOM9S4xk4CMQ0"data-lang="hindi" data-artist="Sanchit Bakhara"data-year="20s"><img src="../static/Angry_Songs/get10.jpg"></a>
+                <a href="https://open.spotify.com/track/3F7IiHst8X2KXwu4oBkywY" data-lang="tamil" data-artist="HipHop Tamizha"data-year="20s"><img src="../static/Angry_Songs/get11.jpg"></a>
+
+                <a href="https://open.spotify.com/track/2K058s9yrpoUfANaQt7Zu4"data-lang="tamil" data-artist="anirudh"><img src="../static/Angry_Songs/get12.jpg"></a>
+                <a href="https://open.spotify.com/track/6hhHkPSpwfkrmQXmBJn7Ii"data-lang="tamil" data-artist="ar rahman"><img src="../static/Angry_Songs/get13.jpg"></a>
+                <a href="https://open.spotify.com/track/7z14jau7LGKM807sqQewIN"data-lang="tamil" data-artist="Sam cs"><img src="../static/Angry_Songs/get14.jpg"></a>
+                <a href="https://open.spotify.com/track/0lNr0bkRupchqckGeSMSpZ"data-lang="tamil" data-artist="yuvan"><img src="../static/Angry_Songs/get15.jpg"></a>
+                <a href="https://open.spotify.com/track/7IPRyJWp0i9vgE2mDZ8kvk"data-lang="tamil" data-artist="anirudh"><img src="../static/Angry_Songs/get16.jpg"></a>
+
+                <a href="https://open.spotify.com/track/32E2AGkk15IU9JMZUGs7Ih"data-lang="tamil" data-artist="anirudh"><img src="../static/Angry_Songs/get17.jpg"></a>
+                <a href="https://open.spotify.com/track/0Ncf2URVDysradPg8FSKTv"data-lang="tamil" data-artist="sbp"><img src="../static/Angry_Songs/get18.jpg"></a>
+                <a href="https://open.spotify.com/track/0rmFz3iFgvMGxEWv5YZRJT"data-lang="tamil" data-artist="sbp"><img src="../static/Angry_Songs/get19.jpg"></a>
+                <a href="https://open.spotify.com/track/6ffEHNJBFnr68xNVoRwPf2"data-lang="tamil" data-artist="vivek"><img src="../static/Angry_Songs/get20.jpg"></a>
+                <a href="https://open.spotify.com/track/6EjzdHQKoIJJVMpjWBroQH"data-lang="malayalam " data-artist="Murali Gopy"><img src="../static/Angry_Songs/get21.jpg"></a>
+
+                <a href="https://open.spotify.com/track/65orA4uL6HAdy9j9VeXxFC"data-lang="malayalam " data-artist="jakes bejoy"><img src="../static/Angry_Songs/get22.jpg"></a>
+                <a href="https://open.spotify.com/track/0Kb9CqpIJwCVFbnIDpSahK"data-lang="malayalam " data-artist="vishnu vijay"><img src="../static/Angry_Songs/get23.jpg"></a>
+                <a href="https://open.spotify.com/track/1wLZaMyjl09RFIyzc51hlx"data-lang="malayalam " data-artist="jakes bejoy"><img src="../static/Angry_Songs/get24.jpg"></a>
+                <a href="https://open.spotify.com/track/1ClqkDtMvG9hnLHOnyaKUS"data-lang="malayalam" data-artist="rzee"><img src="../static/Angry_Songs/get25.jpg"></a>
+                <a href="https://open.spotify.com/track/3uyCqB8ilVXGfM1as90IE8"data-lang="malayalam" data-artist="rzee"><img src="../static/Angry_Songs/get26.jpg"></a>
+
+                <a href="https://open.spotify.com/track/0TvGNbeoOHYaziuSNmP2RN"data-lang="malayalam" data-artist="jakes bejoy"><img src="../static/Angry_Songs/get27.jpg"></a>
+                <a href="https://open.spotify.com/track/3LMbP3YiamO8nrY3qc8Xyk"data-lang="malayalam" data-artist="Karthik"><img src="../static/Angry_Songs/get28.jpg"></a>
+                <a href="https://open.spotify.com/track/75pwDDZoCxXaME1JvBIgwZ"data-lang="malayalam" data-artist="Karthik"><img src="../static/Angry_Songs/get29.jpg"></a>
+                <a href="https://open.spotify.com/track/1VLFkadXeMb6Tw7YE0uBYI"data-lang="malayalam" data-artist="Shaan Rahman"><img src="../static/Angry_Songs/get30.jpg"></a>
+                <a href="https://open.spotify.com/track/1KE8R4uTm0IzwAzkBufKkK"data-lang="telugu" data-artist="Ranjith"><img src="../static/Angry_Songs/get31.jpg"></a>
+
+                <a href="https://open.spotify.com/track/6f7qFjos0WWqvtEnwFDS0a"data-lang="telugu" data-artist="lv revanth"><img src="../static/Angry_Songs/get32.jpg"></a>
+                <a href="https://open.spotify.com/track/3j5tH9i4Zrca5zWjAPPa83"data-lang="telugul" data-artist="lv revanth"><img src="../static/Angry_Songs/get33.jpg"></a>
+                <a href="https://open.spotify.com/track/7a3EBcUgVEJ3N9wfocCMA3"data-lang="telugu" data-artist="Siddharth"><img src="../static/Angry_Songs/get34.jpg"></a>
+                <a href="https://open.spotify.com/track/3ikoCCFiqH0lRwXE58jidG"data-lang="telugu" data-artist="anirudh"><img src="../static/Angry_Songs/get35.jpg"></a>
+                <a href="https://open.spotify.com/track/6sPo5DLveQoGbof5wIH9qI"data-lang="telugu" data-artist="Santhosh Ananddram"><img src="../static/Angry_Songs/get36.jpg"></a>
+
+                <a href="https://open.spotify.com/track/0z2hHT6puSqiw3p86El7Kp"data-lang="telugu" data-artist="devi sri prasad"><img src="../static/Angry_Songs/get37.jpg"></a>
+                <a href="https://open.spotify.com/track/5QP6ZJHd4gOd466d8ehplB"data-lang="telugu" data-artist="mm keeravani "><img src="../static/Angry_Songs/get38.jpg"></a>
+                <a href="https://open.spotify.com/track/1CDwsb7jfP90SMXfUvOmy5"data-lang="telugu" data-artist="aditi"><img src="../static/Angry_Songs/get39.jpg"></a>
+                <a href="https://open.spotify.com/track/1Fm80KCmUMCi8OYmdWZPCZ"data-lang="telugu" data-artist="Siddharth"><img src="../static/Angry_Songs/get40.jpg"></a>
+     
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function filterSongs() {
+            // Get the language, artist name, and year entered by the user
+            var language = document.getElementById("languageFilter").value.toLowerCase();
+            var artistName = document.getElementById("artistFilter").value.toLowerCase();
+          //  var year = document.getElementById("yearFilter").value.toLowerCase();
+
+            // Get all song links
+            var songLinks = document.querySelectorAll('.box a');
+
+            // Loop through each song link and hide/show based on language, artist name, and year
+            songLinks.forEach(function (link) {
+                var linkLanguage = link.getAttribute('data-lang').toLowerCase();
+                var linkArtist = link.getAttribute('data-artist').toLowerCase();
+               // var linkYear = link.getAttribute('data-year').toLowerCase();
+
+                var showLanguage = linkLanguage.includes(language) || language === "";
+                var showArtist = linkArtist.includes(artistName) || artistName === "";
+               // var showYear = linkYear.includes(year) || year === "";
+
+                if (showLanguage&& showArtist  ) { //&& showYear
+                    link.style.display = 'inline-block';
+                } else {
+                    link.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    
+</body>
+</html>

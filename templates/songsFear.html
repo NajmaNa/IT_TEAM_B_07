@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fear_Songs</title>
+    <!-- <link rel="stylesheet" href="happy.css"> -->
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body{
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        /* background-image: linear-gradient(rgba(192, 190, 236, 0.5),rgba(224, 224, 235, 0.5)),url(Images/img4.png);
+        background-size: cover;
+        background-repeat: no-repeat; */
+    }
+
+    img{
+        width: 300px;
+        height: auto;
+        margin: 5px;
+        border: 6px double black;
+    }   
+
+    .img{
+        width: 500px;
+        height: 500px;
+        border: 4px solid black;
+        margin: 5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+    }
+    .header{
+        width: 100%;
+        height: 100vh;
+        background-image: url(../static/bgg.jpg);
+        background-position: center;
+        background-size: cover;
+        overflow-x: hidden;
+        justify-content: center;
+        text-align: center;
+    }
+    input {
+        font: inherit;
+        padding: 10px;
+
+      }
+      #text{
+        color:white;
+        font-family:"cursive"
+      }
+    .box{
+        box-shadow: 0 0 20px 2px rgba(0,0,0,0.1);
+        transition: 1s;
+    }
+    .box img:hover{
+        transform: scale(1.1);
+        z-index: 2;
+    }
+      .btn:hover{
+        background-color: rgb(0, 195, 255);
+    }
+    .btn{
+        border: 2px solid #fff;
+        padding: 10px 35px;
+        border-radius: 30px;
+        margin-right: 15px;
+        font-weight: 700;
+    }
+    select
+    {
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid ;
+        border-radius: 5px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="box" id="songsContainer">
+            <br><br>
+            <select id="languageFilter">
+                <option value="">All</option>
+                <option value="tamil">Tamil</option>
+                <option value="hindi">Hindi</option>
+                <option value="telugu">Telugu</option>
+                <option value="malayalam">Malayalam</option>
+                <!-- Add more options as needed -->
+            </select>
+            <br><br>
+          <label style="font-size: 30px" id="text" for="artistFilter">Artist Name:</label>
+            <input type="text" id="artistFilter" placeholder="Artist Name"><br><br>-->
+            <button onclick="filterSongs()" class="btn">Filter</button><br><br>
+            <div class="box songs-container" id="songsContainer">
+                <a href="https://open.spotify.com/track/3APdIdF8H0jsxSuGOqXedS"data-lang="hindi" data-artist="Rashid ali"><img src="../static/Fear_Songs/get1.jpg"></a>
+                <a href="https://open.spotify.com/track/5VjkTXg4hKSEQTEBISl14P"data-lang="hindi" data-artist="arjit anand"><img src="../static/Fear_Songs/get2.jpg"></a>
+                <a href="https://open.spotify.com/track/2cbaCL38j8eUXBQjvLawET"data-lang="hindi" data-artist="pritam"><img src="../static/Fear_Songs/get3.jpg"></a>
+                <a href="https://open.spotify.com/track/0dUbhFM18NyBDDpiktEQLk"data-lang="hindi" data-artist="udit narayan"><img src="../static/Fear_Songs/get4.jpg"></a>
+                <a href="https://open.spotify.com/track/4FeczSomVWVyU4FW7xDeAI"data-lang="hindi" data-artist="ar rahman"><img src="../static/Fear_Songs/get5.jpg"></a>
+            
+                <a href="https://open.spotify.com/track/0D0lefqSgNAAoXfuQgsRUo"data-lang="hindi" data-artist="udit narayan"><img src="../static/Fear_Songs/get6.jpg"></a>
+                <a href="https://open.spotify.com/track/6FjbAnaPRPwiP3sciEYctO"data-lang="hindi" data-artist="pritam"><img src="../static/Fear_Songs/get7.jpg"></a>
+                <a href="https://open.spotify.com/track/1EjxJHY9A6LMOlvyZdwDly"data-lang="hindi" data-artist="pritam"><img src="../static/Fear_Songs/get8.jpg"></a>
+                <a href="https://open.spotify.com/track/5zKRKQwLVBT1WDJE7XJrnm"data-lang="hindi" data-artist="shankar mahadevan"><img src="../static/Fear_Songs/get9.jpg"></a>
+                <a href="https://open.spotify.com/track/2sVzO3L0fdOMVe8wVlM0IE"data-lang="hindi" data-artist="rahat fateh ali khan"><img src="../static/Fear_Songs/get10.jpg"></a>
+            
+                <a href="https://open.spotify.com/track/4Yu9DgyMSJWU8Fw7mbqYH1"data-lang="malayalam" data-artist="jyotsna radhakrishna"><img src="../static/Fear_Songs/get11.jpg"></a>
+                <a href="https://open.spotify.com/track/7fccqI6j1XXpVpAO5gkDXL"data-lang="malayalam" data-artist="diviya"><img src="../static/Fear_Songs/get13.jpg"></a>
+                <a href="https://open.spotify.com/track/3o4qfQogMEuxQQ9P8Ol8To"data-lang="malayalam" data-artist="baburaj"><img src="../static/Fear_Songs/get14.jpg"></a>
+                <a href="https://open.spotify.com/track/7tDASYxj2O3UBK6VTWGaUW"data-lang="malayalam" data-artist="najim arshad"><img src="../static/Fear_Songs/get15.jpg"></a>
+                <a href="https://open.spotify.com/track/4zYtd7LtGof65te2Bi4PNb"data-lang="malayalam" data-artist="ks chithra"><img src="../static/Fear_Songs/get16.jpg"></a>
+            
+                <a href="https://open.spotify.com/track/36bYASwok7rBHAkrqiPdnu"data-lang="malayalam" data-artist="harisankar"><img src="../static/Fear_Songs/get17.jpg"></a>
+                <a href="https://open.spotify.com/track/21CJ6tEyjOuXXmfov1HNwa"data-lang="malayalam" data-artist="ks chithra"><img src="../static/Fear_Songs/get18.jpg"></a>
+                <a href="https://open.spotify.com/track/0hqAmKO4CGsZjaqp8mCOfv"data-lang="malayalam" data-artist="llaiyaraaja"><img src="../static/Fear_Songs/get19.jpg"></a>
+                <a href="https://open.spotify.com/track/2fdJAWhGsgdRUDV8cZLUDb"data-lang="malayalam" data-artist="thajudheen"><img src="../static/Fear_Songs/get20.jpg"></a>
+                <a href="https://open.spotify.com/track/6RNUDvsJ7CwpKRyVdfXLM5"data-lang="telugu" data-artist="thajudheen"><img src="../static/Fear_Songs/get21.jpg"></a>
+
+                <a href="https://open.spotify.com/track/4ZguAeEoNjipSbQFzfDsYI"data-lang="telugu" data-artist="bheems ceciroleo"><img src="../static/Fear_Songs/get23.jpg"></a>
+                <a href="https://open.spotify.com/track/0FIInUyZXoehtI6Q3A845m"data-lang="telugu" data-artist="damini"><img src="../static/Fear_Songs/get24.jpg"></a>
+                <a href="https://open.spotify.com/track/2RFmpSIlw6Pz9pEWRwec6m"data-lang="telugu" data-artist="Mahesh babu"><img src="../static/Fear_Songs/get25.jpg"></a>
+                <a href="https://open.spotify.com/track/3XrgFJdi7Isja4pq7owxdc"data-lang="telugu" data-artist="damini"><img src="../static/Fear_Songs/get26.jpg"></a>
+                <a href="https://open.spotify.com/track/08Zh9GFP2TKItpgcfRSHUV"data-lang="telugu" data-artist="hariharan"><img src="../static/Fear_Songs/get27.jpg"></a>
+            
+                <a href="https://open.spotify.com/track/64bxBHNCZuCR3XCPYyf6v9"data-lang="telugu" data-artist="srinivas"><img src="../static/Fear_Songs/get28.jpg"></a>
+                <a href="https://open.spotify.com/track/7ILXon2PBU1bGYemfNg91q"data-lang="telugu" data-artist="ks chithra"><img src="../static/Fear_Songs/get29.jpg"></a>
+                <a href="https://open.spotify.com/track/3JGv4W2dAdJLUgpiYmOeLC"data-lang="telugu" data-artist="devi sri prasad"><img src="../static/Fear_Songs/get30.jpg"></a>
+                <a href="https://open.spotify.com/track/7rsUXVEqWZ8Jq2Yud30bVl"data-lang="tamil" data-artist="harris jayaraj"><img src="../static/Fear_Songs/get31.jpg"></a>
+                <a href="https://open.spotify.com/track/4s5Y0Kn6Nv4hJAWEFFSjgW"data-lang="tamil" data-artist="Karthik"><img src="../static/Fear_Songs/get32.jpg"></a>
+            
+                <a href="https://open.spotify.com/track/3nSFnhbVEVvxFi7hhA5Nln"data-lang="tamil" data-artist="gvprakash"><img src="../static/Fear_Songs/get33.jpg"></a>
+                <a href="https://open.spotify.com/track/1iZu3A9l8tT9JuIAAzfYEi"data-lang="tamil" data-artist="hariharan"><img src="../static/Fear_Songs/get34.jpg"></a>
+                <a href="https://open.spotify.com/track/0FTPiuMAGuvXVjeXh7g8ot"data-lang="tamil" data-artist="vivek-mervin"><img src="../static/Fear_Songs/get35.jpg"></a>
+                <a href="https://open.spotify.com/track/2DnfC8ghXPQgn1SKPCCL6S"data-lang="tamil" data-artist="harris jayaraj"><img src="../static/Fear_Songs/get36.jpg"></a>
+                <a href="https://open.spotify.com/track/3gXvrgKqEyXMHlMRBTQ8DU"data-lang="tamil" data-artist="yuvan"><img src="../static/Fear_Songs/get37.jpg"></a> 
+                <a href="https://open.spotify.com/track/0FTPiuMAGuvXVjeXh7g8ot"data-lang="tamil" data-artist="vivek-mervin"><img src="../static/Fear_Songs/get38.jpg"></a>
+                <a href="https://open.spotify.com/track/2DnfC8ghXPQgn1SKPCCL6S"data-lang="tamil" data-artist="harris"><img src="../static/Fear_Songs/get39.jpg"></a>
+                            
+            </div>
+        </div></div>
+        <script>
+            function filterSongs() {
+                // Get the language and artist name entered by the user
+                var language = document.getElementById("languageFilter").value.toLowerCase();
+                var artistName = document.getElementById("artistFilter").value.toLowerCase();
+        
+                // Get all song links
+                var songLinks = document.querySelectorAll('.box a');
+        
+                // Loop through each song link and hide/show based on language and artist name
+                songLinks.forEach(function (link) {
+                    var linkLanguage = link.getAttribute('data-lang').toLowerCase();
+                    var linkArtist = link.getAttribute('data-artist').toLowerCase();
+        
+                    var showLanguage = linkLanguage.includes(language) || language === "";
+                   var showArtist = linkArtist.includes(artistName) || artistName === "";
+        
+                    if (showLanguage&& showArtist ) {
+                        link.style.display = 'inline-block';
+                    } else {
+                        link.style.display = 'none';
+                    }
+                });
+            }
+        </script>
+    
+</body>
+</html>

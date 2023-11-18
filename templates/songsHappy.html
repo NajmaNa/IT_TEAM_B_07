@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy_Songs</title>
+    <!-- <link rel="stylesheet" href="happy.css"> -->
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body{
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        /* background-image: linear-gradient(rgba(192, 190, 236, 0.5),rgba(224, 224, 235, 0.5)),url(Images/img4.png);
+        background-size: cover;
+        background-repeat: no-repeat; */
+    }
+
+    img{
+        width: 300px;
+        height: auto;
+        margin: 5px;
+        border: 6px double black;
+    }   
+
+    .img{
+        width: 500px;
+        height: 500px;
+        border: 4px solid black;
+        margin: 5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+    }
+    .header{
+        width: 100%;
+        height: 100vh;
+        background-image: url(../static/bgg.jpg);
+        background-position: center;
+        background-size: cover;
+        overflow-x: hidden;
+        justify-content: center;
+        text-align: center;
+    }
+    input {
+        font: inherit;
+        padding: 10px;
+
+      }
+      #text{
+        color:white;
+        font-family:"cursive";
+        
+      }
+    .box{
+        box-shadow: 0 0 20px 2px rgba(0,0,0,0.1);
+        transition: 1s;
+    }
+    .box img:hover{
+        transform: scale(1.1);
+        z-index: 2;
+    }
+      .btn:hover{
+        background-color: rgb(0, 195, 255);
+    }
+    .btn{
+        border: 2px solid #fff;
+        padding: 10px 35px;
+        border-radius: 30px;
+        margin-right: 15px;
+        font-weight: 700;
+    }
+     select
+    {
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid ;
+        border-radius: 5px;
+    }
+    </style>
+
+<body>
+    <script>
+        function filterSongs() {
+            // Get the language and artist name entered by the user
+            var language = document.getElementById("languageFilter").value.toLowerCase();
+      //      var artistName = document.getElementById("artistFilter").value.toLowerCase();
+    
+            // Get all song links
+            var songLinks = document.querySelectorAll('.box a');
+    
+            // Loop through each song link and hide/show based on language and artist name
+            songLinks.forEach(function (link) {
+                var linkLanguage = link.getAttribute('data-lang').toLowerCase();
+              //  var linkArtist = link.getAttribute('data-artist').toLowerCase();
+    
+                var showLanguage = linkLanguage.includes(language) || language === "";
+              //  var showArtist = linkArtist.includes(artistName) || artistName === "";
+    
+                if (showLanguage) {
+                    link.style.display = 'inline-block';
+                } else {
+                    link.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    <div class="header">
+        <div class="box" id="songsContainer">
+            <br><br>
+            <label style="font-size: 30px" id="text" for="languageFilter">Language:  </label>
+            <!-- Replace input with select dropdown -->
+            <select id="languageFilter">
+                <option value="">All</option>
+                <option value="tamil">Tamil</option>
+                <option value="hindi">Hindi</option>
+                <option value="telugu">Telugu</option>
+                <option value="malayalam">Malayalam</option>
+                <!-- Add more options as needed -->
+            </select>
+            <br><br>
+            <label style="font-size: 30px" id="text" for="artistFilter">Artist Name:</label>
+            <input type="text" id="artistFilter" placeholder="Artist Name"><br><br>-->
+            <button onclick="filterSongs()" class="btn">Filter</button><br><br>
+            <div class="box songs-container" id="songsContainer">
+                <a href="https://open.spotify.com/track/4HdzYTQiouB9BVYX7JOrhh?autoplay=true"  data-artist="anirudh" data-lang="tamil"><img src="../static/Happy_Songs/Bbg_2.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/6eE9euoz9B0jF4XHqL9Gx8?autoplay=true" data-artist="spb" data-lang="tamil"><img src="../static/Happy_Songs/bg_15.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/4mQpBIJKBpd8lcrtZ73SP8?autoplay=true" data-artist="arijit" data-lang="hindi"><img src="../static/Happy_Songs/bg-8.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/6jUscicoyUljrPOdQCfhnd?autoplay=true" data-artist="sidsriram" data-lang="telugu"><img src="../static/Happy_Songs/bg_33.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/1S4gynyFIz8IROMfhDIh3V?autoplay=true" data-artist="sidsriram" data-lang="telugu"><img src="../static/Happy_Songs/bg_27.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/1LbBOhicFmu7ktJqIHCELt?autoplay=true" data-artist="anirudh" data-lang="tamil"><img src="../static/Happy_Songs/bg_14.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/0dnDTvdUco2UbaBjUtPxNS?autoplay=true" data-artist="armaan malik" data-lang="telugu"><img src="../static/Happy_Songs/bg_30.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/37LmFlPnpsBISJjNvqbUkT?autoplay=true" data-artist="sidsriram" data-lang="telugu"><img src="../static/Happy_Songs/bg_31.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/7BjQd0sfYsMGVrTpRdBNTT?autoplay=true" data-artist="arijit" data-lang="hindi"><img src="../static/Happy_Songs/bg_10.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/7lnRiEP7BHXuILXNY9MH8f?autoplay=true" data-artist="gvprakash" data-lang="tamil"><img src="../static/Happy_Songs/bg_4.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/6eE9euoz9B0jF4XHqL9Gx8?autoplay=true" data-artist="ilayaraja" data-lang="tamil"><img src="../static/Happy_Songs/bg_15.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/5QAj9kZouI8eSwqDqtywNr?autoplay=true" data-artist="spb" data-lang="tamil"><img src="../static/Happy_Songs/bg_16.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/1qHQ6U2HSSddaH6LYs5M9t?autoplay=true" data-artist="ilayaraja" data-lang="tamil"><img src="../static/Happy_Songs/bg_17.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/1Uuw9nSChAnmwbFmnuCx5S?autoplay=true" data-artist="arijit" data-lang="hindi"><img src="../static/Happy_Songs/bg_18.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/4eu27jAU2bbnyHUC3G75U8?autoplay=true" data-artist="arijit" data-lang="hindi"><img src="../static/Happy_Songs/bg_11.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/3APdIdF8H0jsxSuGOqXedS?autoplay=true" data-artist="arraham" data-lang="hindi"><img src="../static/Happy_Songs/bg_12.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/7ltsfuHdqTZ5LwPpDy1q0v?autoplay=true" data-artist="arijit" data-lang="hindi"><img src="../static/Happy_Songs/bg_13.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/6YNh7d9B3Jlwlzkvq2MMbb?autoplay=true" data-artist="harris" data-lang="telugu"><img src="../static/Happy_Songs/bg_6.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/3fPgIknlkDWXs1l2noKZbp?autoplay=true" data-artist="arijit" data-lang="hindi"><img src="../static/Happy_Songs/bg_7.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/4mQpBIJKBpd8lcrtZ73SP8?autoplay=true" data-artist="arijit" data-lang="hindi"><img src="../static/Happy_Songs/bg-8.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/1HBGWNyoRJhxvsfO8LLFDo?autoplay=true" data-artist="darshan raval" data-lang="hindi"><img src="../static/Happy_Songs/bg_9.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/2I8wOcvmB0PPubhFDQPy4k?autoplay=true" data-artist="sachin" data-lang="malayalam"><img src="../static/Happy_Songs/bg_32.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/6jUscicoyUljrPOdQCfhnd?autoplay=true" data-artist="sidsriram" data-lang="telugu"><img src="../static/Happy_Songs/bg_33.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/3VAMO9Now4MBlxt4FINdf1?autoplay=true" data-artist="vijay yesudas" data-lang="malayalam"><img src="../static/Happy_Songs/bg_21.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/52WAvXADpiCQ6aRweaWshm?autoplay=true" data-artist="sachin" data-lang="malayalam"><img src="../static/Happy_Songs/bg_22.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/2If8INgNxT7NOBOcF7EROi?autoplay=true" data-artist="sachin" data-lang="malayalam"><img src="../static/Happy_Songs/bg_23.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/4mOmWSdTmf6fSAibGWCKp7?autoplay=true" data-artist="arraham" data-lang="tamil"><img src="../static/Happy_Songs/bg_3.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/5pJqWAOgH1laO2BAf5XZb1?autoplay=true" data-artist="spb" data-lang="tamil"><img src="../static/Happy_Songs/bg_19.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/7ACvDfmqOm46Rmmei03KOC?autoplay=true" data-artist="arraham" data-lang="tamil"><img src="../static/Happy_Songs/bg_20.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/1S4gynyFIz8IROMfhDIh3V?autoplay=true" data-artist="vishal" data-lang="telugu"><img src="../static/Happy_Songs/bg_27.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/2LLZkWMReCWhgTrHuRh6dV?autoplay=true" data-artist="anirudh" data-lang="tamil"><img src="../static/Happy_Songs/bg_5.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/0hNPo5brQ2MLlrdVKZfHK9?autoplay=true" data-artist="sidsriram" data-lang="telugu"><img src="../static/Happy_Songs/bg_28.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/3j9DrRebdWK1jkpOw9FZUy?autoplay=true" data-artist="sidsriram" data-lang="telugu"><img src="../static/Happy_Songs/bg_29.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/2iNw1ofWuYdStUmDkLkOJy?autoplay=true"data-artist="anirudh" data-lang="malayalam"><img src="../static/Happy_Songs/bg_24.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/21gvcUgUCcWWbOvGtw9wB6?autoplay=true" data-artist="vineeth srinivsan" data-lang="malayalam"><img src="../static/Happy_Songs/bg_25.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/2sy2x1JZNqpKIIna1tfeYZ?autoplay=true" data-artist="sachin" data-lang="malayalam"><img src="../static/Happy_Songs/bg_26.jpg" class="song-image"></a>
+                <a href="https://open.spotify.com/track/59oAJRA0zzLzl9AXa1R6zh?autoplay=true" data-artist="harisankar" data-lang="malayalam"><img src="../static/Happy_Songs/bg_34.jpg" class="song-image"></a>
+               <!-- <a href="https://open.spotify.com/track/68SQB9JEA3YKYPFejBOH2S"data-lang="tamil" data-artist="Santhosh Narayanan"><img src="../static/Fear_Songs/1.jpg"></a>
+<a href="https://open.spotify.com/track/00yTVQE3eIFc21kA76tyJs"data-lang="tamil" data-artist="anirudh"><img src="../static/Fear_Songs/2.jpg"></a>
+<a href="https://open.spotify.com/track/4xd8fO9NUlWWrEH2dTo3ma"data-lang="tamil" data-artist="yuvan"><img src="../static/Fear_Songs/3.jpg"></a>
+<a href="https://open.spotify.com/track/4LL4Y9dCCOf1WVqz6fMCxI"data-lang="tamil" data-artist="aathi"><img src="../static/Fear_Songs/4.jpg"></a>
+<a href="https://open.spotify.com/track/5KGQ4YAwDV8YolJhbFPSuT"data-lang="tamil" data-artist="yuvan"><img src="../static/Fear_Songs/5.jpg"></a>
+<a href="https://open.spotify.com/track/3p4vXmvE970zZSZUF0GUnT"data-lang="tamil" data-artist="vijay antony"><img src="../static/Fear_Songs/6.jpg"></a>
+
+<a href="https://open.spotify.com/track/6eTPyEkYUmDUFvNxJdNuOD"data-lang="hindi" data-artist="ayushman khurrana"><img src="../static/Fear_Songs/7.jpg"></a>
+<a href="https://open.spotify.com/track/1NxlktIRgiAPJ8U06v9veI"data-lang="hindi" data-artist="sachin"><img src="../static/Fear_Songs/8.jpg"></a>
+<a href="https://open.spotify.com/track/5HJvDTnAaDWqhsE841I1QR"data-lang="hindi" data-artist="sachin"><img src="../static/Fear_Songs/9.jpg"></a>-->
+  
+
+            </div>
+            
+        </div>
+    </div>
+       
+</body>
+</html>

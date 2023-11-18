@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sad_Songs</title>
+    <!-- <link rel="stylesheet" href="happy.css"> -->
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body{
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        /* background-image: linear-gradient(rgba(192, 190, 236, 0.5),rgba(224, 224, 235, 0.5)),url(Images/img4.png);
+        background-size: cover;
+        background-repeat: no-repeat; */
+    }
+
+    img{
+        width: 300px;
+        height: auto;
+        margin: 5px;
+        border: 6px double black;
+    }
+    .btn:hover{
+        background-color: rgb(0, 195, 255);
+    }
+    .btn{
+        border: 2px solid #fff;
+        padding: 10px 35px;
+        border-radius: 30px;
+        margin-right: 15px;
+        font-weight: 700;
+    }
+    .img{
+        width: 500px;
+        height: 500px;
+        border: 4px solid black;
+        margin: 5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+    }
+    .header{
+        width: 100%;
+        height: 100vh;
+        background-image: url(../static/bgg.jpg);
+        background-position: center;
+        background-size: cover;
+        overflow-x: hidden;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .box{
+        box-shadow: 0 0 20px 2px rgba(0,0,0,0.1);
+        transition: 1s;
+    }
+    .box img:hover{
+        transform: scale(1.1);
+        z-index: 2;
+    }
+   
+      .songs-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .song-link {
+        width: 200px;
+        margin: 10px;
+      }
+      input {
+        font: inherit;
+        padding: 10px;
+
+      }
+      #text{
+        color:white;
+        font-family:"cursive"
+      }
+      select
+    {
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid ;
+        border-radius: 5px;
+    }
+    </style>
+</head>
+
+<body>
+   
+
+    <script>
+        function filterSongs() {
+            // Get the language and artist name entered by the user
+            var language = document.getElementById("languageFilter").value.toLowerCase();
+            var artistName = document.getElementById("artistFilter").value.toLowerCase();
+    
+            // Get all song links
+            var songLinks = document.querySelectorAll('.box a');
+    
+            // Loop through each song link and hide/show based on language and artist name
+            songLinks.forEach(function (link) {
+                var linkLanguage = link.getAttribute('data-lang').toLowerCase();
+               var linkArtist = link.getAttribute('data-artist').toLowerCase();
+    
+                var showLanguage = linkLanguage.includes(language) || language === "";
+               var showArtist = linkArtist.includes(artistName) || artistName === "";
+    
+                if (showLanguage&&showArtist) {
+                    link.style.display = 'inline-block';
+                } else {
+                    link.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+
+    <div class="header">
+        <div class="box" id="songsContainer">
+            <br><br>
+            <label style="font-size: 30px" id="text" for="languageFilter">Language:  </label>
+            <!-- Replace input with select dropdown -->
+            <select id="languageFilter">
+                <option value="">All</option>
+                <option value="tamil">Tamil</option>
+                <option value="hindi">Hindi</option>
+                <option value="telugu">Telugu</option>
+                <option value="malayalam">Malayalam</option>
+                <!-- Add more options as needed -->
+            </select><br><br>
+           <label style="font-size: 30px" id="text" for="artistFilter">Artist Name:</label>
+            <input type="text" id="artistFilter" placeholder="Artist Name"><br><br>-->
+            <button onclick="filterSongs()" class="btn">Filter</button><br><br>
+            <div class="box songs-container" id="songsContainer">
+              <a href="https://open.spotify.com/track/0Ilt3ks9TsVNV5g9tM2uW5?si=ff2ad68a27444aa9"  data-artist="yuvan"data-lang="tamil"><img src="../static/Sad_Songs/bgs-64.jpg"></a>
+              <a href="https://open.spotify.com/track/4ZqS5wqsUvzyounui1C3u6?si=78b794cd55d94206"  data-artist="yuvan"data-lang="tamil"><img src="../static/Sad_Songs/bgs-65.jpg"></a>
+
+              <a href="https://open.spotify.com/track/0czcoKJbJt08NqKrvSbbz7?si=695bc7eff078488b"  data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/bgs-66.jpg"></a>
+           
+                        <a href="https://open.spotify.com/track/6RXJKdpBp6AVL6H6sHyNp0?si=e13c590ba12d4ce0" data-artist="anirudh" data-lang="tamil"><img src="../static/Sad_Songs/bgs-27.jpg"></a>
+                       
+                        <a href="https://open.spotify.com/track/3LP4QpKptfe2yEC7oG5iNa?si=deca71de29724191S" data-artist="yuvan"data-lang="tamil"><img src="../static/Sad_Songs/bgs-10.jpg"></a>
+                      
+                        <a href="https://open.spotify.com/track/1YS53PnTAikJSZjSN15tbR?si=355df9c983d044f1" data-artist="ilayaraja"data-lang="tamil"><img src="../static/Sad_Songs/bgs-31.jpg"></a>
+                        <a href="https://open.spotify.com/track/6sAdmaffuMijDszeFrGF1H?si=baa14fc39f734dac" data-artist="anirudh"data-lang="tamil"><img src="../static/Sad_Songs/bgs-11.jpg"></a>
+                        
+                        <a href="https://open.spotify.com/track/6eE9euoz9B0jF4XHqL9Gx8?si=456e18ac7a534806" data-artist="spb"data-lang="tamil"><img src="../static/Sad_Songs/bgs-32.jpg"></a>
+                        <a href="https://open.spotify.com/track/4Bhnlg3mOoszfzEiNpdhdj?si=7e3b8005eaf34f29" data-artist="spb"data-lang="tamil"><img src="../static/Sad_Songs/bgs-33.jpg"></a>
+                        <a href="https://open.spotify.com/track/3c1tJAYgROZEdqRfm7Wsny?si=f90856026c894eac" data-artist="yuvan"data-lang="tamil"><img src="../static/Sad_Songs/bgs-15.jpg"></a>
+                          <a href="https://open.spotify.com/track/3eVkn2lYFVq8vZNDR0gf1Z?si=6c4312e306264b78" data-artist="yuvan"data-lang="tamil"><img src="../static/Sad_Songs/bgs-17.jpg"></a>
+                        <a href="https://open.spotify.com/track/5gC5yDi7o5ukwt1eiIsniQ?si=ce3a21b152c54880" data-artist="ilayaraja"data-lang="tamil"><img src="../static/Sad_Songs/bgs-23.jpg"></a>
+                        <a href="https://open.spotify.com/track/2FCXQHugkoHE1K3tiDu8pu?si=c5b6ee0882484039"  data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/bs-13.jpg"></a>
+                        <a href="https://open.spotify.com/track/1UWacd8x8tPPwmrPB1MoBI?si=aad2824b8bdc435d"  data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/bs-14.jpg"></a>
+                        <a href="https://open.spotify.com/track/09KdVJCUon1OvPmST9uJKt?si=893484112b1045b2"  data-artist="sachin"data-lang="malayalam"><img src="../static/Sad_Songs/bs-31.jpg"></a>
+
+                      
+                        <a href="https://open.spotify.com/track/7mLEUzAulFygMchoGMrP8E?si=58a72152aca54f61" data-artist="arrahman"data-lang="tamil"><img src="../static/Sad_Songs/bgs-34.jpg"></a>
+                        <a href="https://open.spotify.com/track/7FEWG1bL31YAcnxJQvxJJO?si=1eeaae420b324a96" data-artist="arrahman"data-lang="tamil"><img src="../static/Sad_Songs/bgs-20.jpg"></a>
+                        <a href="https://open.spotify.com/track/491DwnBb3MA8RzyA2E0Skt?si=b739199d2c9f4d5e" data-artist="anirudh"data-lang="tamil"><img src="../static/Sad_Songs/bgs-4.jpg"></a>
+                        <a href="https://open.spotify.com/track/6078vTOfNPOHZDuyzzsMLx?si=f09508abf01f4c94" data-artist="spb"data-lang="tamil"><img src="../static/Sad_Songs/bgs-22.jpg"></a>
+                        <a href="https://open.spotify.com/track/0cu6EbKSnjHBavfOhycdqR?si=8ffd898a5ce5484a" data-artist="spb"data-lang="tamil"><img src="../static/Sad_Songs/bgs-25.jpg"></a>
+                        <a href="https://open.spotify.com/track/5pfBPbl9pdW7kWf5u8uBuE?si=3a08097061934526" data-artist="ilayaraja"data-lang="tamil"><img src="../static/Sad_Songs/bgs-21.jpg"></a>
+                        <a href="https://open.spotify.com/track/4Ndcwn2iAt1MdU6lpw24ZQ?si=0dc6a7060ae6453e" data-artist="anirudh"data-lang="tamil"><img src="../static/Sad_Songs/bgs-3.jpg"></a>
+                      
+                        <a href="https://open.spotify.com/track/3hp56aHySTDt9bdZiwdDO1?si=397f1457ae104a1f" data-artist="arrahman"data-lang="tamil"><img src="../static/Sad_Songs/bgs-36.jpg"></a>
+                        <a href="https://open.spotify.com/track/7F81FsjjLnWrT2Rp7eYb03?si=3a5107e5d4c94111" data-artist="arrahman"data-lang="tamil"><img src="../static/Sad_Songs/bgs-37.jpg"></a>
+                       
+                        <a href="https://open.spotify.com/track/3xMHXmedL5Rvfxmiar9Ryv?si=b70572ff6f8c4fc9"  data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/bs-19.jpg"></a>
+                        <a href="https://open.spotify.com/track/4FeczSomVWVyU4FW7xDeAI?si=573165c23cd1480d"  data-artist="arrahman"data-lang="hindi"><img src="../static/Sad_Songs/bgs-77.jpg"></a>
+                        <a href="https://open.spotify.com/track/3YAKWgfsdOFYsyQOfZMM7T?si=5a82b33d41d04dbf"  data-artist="arrahman"data-lang="hindi"><img src="../static/Sad_Songs/bgs-78.jpg"></a>
+                        <a href="https://open.spotify.com/track/6OV8SRZX50WcCndTjk3ler?si=1181a44925a041fb" data-artist="yuvan"data-lang="tamil"><img src="../static/Sad_Songs/bgs-41.jpg"></a>
+                        <a href="https://open.spotify.com/track/7fu8lcM9N3rVjWZr9ky6Nd?si=f4992698570f44cb" data-artist="yuvan"data-lang="tamil"><img src="../static/Sad_Songs/bgs-42.jpg"></a>
+                    
+                        <a href="https://open.spotify.com/track/3gnWw0LToxswxfC6Eb8GBp?si=b8e20c56fb1f4aa5" data-artist="yuvan"data-lang="tamil"><img src="../static/Sad_Songs/bgs-46.jpg"></a>
+                        <a href="https://open.spotify.com/track/65dvxc4Kctq3JIJ2BkKKMj?si=bebc60839c5845ff" data-artist="arrahman"data-lang="tamil"><img src="../static/Sad_Songs/bgs-38.jpg"></a>
+                        <a href="https://open.spotify.com/track/5jOi67yXzjpMdl6KFNWSIe?si=44fea1cf4c3b4434" data-artist="arrahman"data-lang="tamil"><img src="../static/Sad_Songs/bgs-39.jpg"></a>
+                        <a href="https://open.spotify.com/track/76UZxtnQZvglMQQbGFYmWx?si=41928a20de0843e5" data-artist="arrahman"data-lang="tamil"><img src="../static/Sad_Songs/bgs-40.jpg"></a>
+                        <a href="https://open.spotify.com/track/5G7pZ8G8NFvS1MQ9H4L7dC?si=9b3ea1f609034685"  data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/bs-18.jpg"></a>
+                        <a href="https://open.spotify.com/track/4yBnYuHh2ygMxtcoCUp6A1?si=87658206f40a4bdc"  data-artist="anirudh"data-lang="tamil"><img src="../static/Sad_Songs/bs-9.jpg"></a>
+                        <a href="https://open.spotify.com/track/2c2dNWJodzG6aQMW0imtag?si=a7f15760c2bb4807"  data-artist="arman"data-lang="telugu"><img src="../static/Sad_Songs/bs-22.jpg"></a>
+                        <a href="https://open.spotify.com/track/14M1StehpwsydSGGy8z9eq?si=1f4d83cc972a4fc1"  data-artist="sidsriram"data-lang="telugu"><img src="../static/Sad_Songs/bs-25.jpg"></a>
+                        <a href="https://open.spotify.com/track/5L4SWiL8iGAt0ELdqUyCKD?si=deed0c821b1946bb"  data-artist="sachin"data-lang="malayalam"><img src="../static/Sad_Songs/bs-32.jpg"></a>
+                        <a href="https://open.spotify.com/track/5VIY9V6s886MPB1mL0PqBr?si=b77f5f9b86b1496c"  data-artist="vishal"data-lang="telugu"><img src="../static/Sad_Songs/bs-26.jpg"></a>
+                        <a href="https://open.spotify.com/track/6sAdmaffuMijDszeFrGF1H?si=c23ff6b5b7e54a63"  data-artist="anirudh"data-lang="tamil"><img src="../static/Sad_Songs/bs-5.jpg"></a>
+                        <a href="https://open.spotify.com/track/6ne4U7CZISCRXoP6FAlM9A?si=3fedbbbda0fb4f49" data-artist="yuvan"data-lang="tamil"><img src="../static/Sad_Songs/bgs-18.jpg"></a>
+                        <a href="https://open.spotify.com/track/55LXlsWz0a222gwjAVevQi?si=7318c75e8c1e46c6" data-artist="yuvan"data-lang="tamil"><img src="../static/Sad_Songs/bgs-19.jpg"></a>
+                        
+                        <a href="https://open.spotify.com/track/7rXAo8EAnXAZFVBZ4NCGPN?si=498518502d114c5c" data-artist="yuvan"data-lang="tamil"><img src="../static/Sad_Songs/bgs-44.jpg"></a>
+                        <a href="https://open.spotify.com/track/7bQ7f7KtXZ5Tcnj0UDUAtp?si=d048f735a2ad403f" data-artist="ilayaraja"data-lang="tamil"><img src="../static/Sad_Songs/bgs-14.jpg"></a>
+
+                        <a href="https://open.spotify.com/track/0fb1PMDfxtOdU0tMD4JlRg?si=2714f3f22fa24257"  data-artist="yuvan"data-lang="telugu"><img src="../static/Sad_Songs/bs-28.jpg"></a>
+                        <a href="https://open.spotify.com/track/7p6O0wgkXp4IsZGea3uFSH?si=8d0c62d7fb6e46b4"  data-artist="anirudh"data-lang="malayalam"><img src="../static/Sad_Songs/bs-29.jpg"></a>
+                        <a href="https://open.spotify.com/track/4hTcGYU6uXZVCAfIMsxhlC?si=52a24b56204241d8"  data-artist="sidsriram"data-lang="telugu"><img src="../static/Sad_Songs/bs-30.jpg"></a>
+                        <a href="https://open.spotify.com/track/6sPW145Y3LSXd4p1LjBOcS?si=1c01967e3dbb43d2"  data-artist="anirudh"data-lang="tamil"><img src="../static/Sad_Songs/bs-1.jpg"></a>
+                        <a href="https://open.spotify.com/track/6zdikHQs2PBFgGIZBxqOeV?si=ca92b7e4ee6646ab"  data-artist="anirudh"data-lang="tamil"><img src="../static/Sad_Songs/bs-2.jpg"></a>
+                        <a href="https://open.spotify.com/track/6VBhH7CyP56BXjp8VsDFPZ?si=86578b728ccf4991"  data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/bgs-68.jpg"></a>
+                        <a href="https://open.spotify.com/track/0l6g8Z8mqGbGXFOjigYetD?si=c86a5453d3074e7c"  data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/bgs-69.jpg"></a>
+                        
+                        <a href="https://open.spotify.com/track/3LP4QpKptfe2yEC7oG5iNa?si=deca71de29724191S"  data-artist="yuvan"data-lang="tamil"><img src="../static/Sad_Songs/bs-10.jpg"></a>
+                        <a href="https://open.spotify.com/track/6GFtWQYco30oKpMr5xJwy2?si=94459dcd9abc4c8e"  data-artist="anirudh"data-lang="tamil"><img src="../static/Sad_Songs/bs-4.jpg"></a>
+                        <a href="https://open.spotify.com/track/6bdpj89aYEBjhpsenXAsmO?si=a52d9f750daf4a57"  data-artist="arraham"data-lang="hindi"><img src="../static/Sad_Songs/bgs-67.jpg"></a>
+
+                        <a href="https://open.spotify.com/track/0H2iJVgorRR0ZFgRqGUjUM?si=8c1f93cc4b6b43a0"  data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/bs-15.jpg"></a>
+                        <a href="https://open.spotify.com/track/4eFnk661RcdOuH9ajiTO3j?si=ccdc0eba2aeb41cc"  data-artist="mohamad irfan"data-lang="hindi"><img src="../static/Sad_Songs/bs-16.jpg"></a>
+                        <a href="https://open.spotify.com/track/5PUXKVVVQ74C3gl5vKy9Li?si=2ae953fe6d8446a9"  data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/bs-17.jpg"></a>
+                        <a href="https://open.spotify.com/track/6bdpj89aYEBjhpsenXAsmO?si=a52d9f750daf4a57"  data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/bgs-67.jpg"></a>
+                        
+                        <a href="https://open.spotify.com/track/4PKGaJPuXfespUVeXLBaA5?si=634d018e7a3646a1" data-artist="ilayaraja"data-lang="tamil"><img src="../static/Sad_Songs/bgs-35.jpg"></a>
+                        <a href="https://open.spotify.com/track/5RAAc3UsyqRQuVfpiQ8k5J?si=3ba55d38ce8a4ac4" data-artist="ilayaraja"data-lang="tamil"><img src="../static/Sad_Songs/bgs-13.jpg"></a>
+                        <a href="https://open.spotify.com/track/0lVVSxwaEmStgTECv4JSTM?si=95af75662a1e4f6a" data-artist="arrahman"data-lang="tamil"><img src="../static/Sad_Songs/bgs-5.jpg"></a>
+                        <a href="https://open.spotify.com/track/7mMkw0JFKnyMS6oGRT6b3O?si=d89b1a234e1e4c05" data-artist="arrahman"data-lang="tamil"><img src="../static/Sad_Songs/bgs-6.jpg"></a>
+                        <a href="https://open.spotify.com/track/6iolBQ6ZcLv6gDSo7NDLGX?si=29c36151ccfd4dee" data-artist="arrahman"data-lang="tamil"><img src="../static/Sad_Songs/bgs-12.jpg"></a>
+                        <a href="https://open.spotify.com/track/0xNiDPK4YdZ51ALxSid0QV?si=1289af4b8ce14f0f" data-artist="vishal"data-lang="telugu"><img src="../static/Sad_Songs/bs-23.jpg"></a>
+                        <a href="https://open.spotify.com/track/5QmFXjtfG8OS5m7RlO9Tgx?si=e37803b1059a4d4c" data-artist="spb"data-lang="tamil"><img src="../static/Sad_Songs/bgs-9.jpg"></a>
+                        <a href="https://open.spotify.com/track/4UJkUnfEEL8B2JZ1OQfYOO?si=50bb424386474413"  data-artist="arrahman"data-lang="hindi"><img src="../static/Sad_Songs/bgs-79.jpg"></a>
+                        <a href="https://open.spotify.com/track/56zZ48jdyY2oDXHVnwg5Di?si=578c09865ca34379"  data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/bs-7.jpg"></a>
+                        <a href="https://open.spotify.com/track/7tMn4y7eBEMcUFIWZPaHCM?si=8da2c4e955ba4177"  data-artist="gvprakash"data-lang="tamil"><img src="../static/Sad_Songs/bs-8.jpg"></a>
+                        <a href="https://open.spotify.com/track/2uqXfUERVBLa1heEoUTBlO?si=502118e2b20f4f7d" data-artist="yuvan"data-lang="tamil"><img src="../static/Sad_Songs/bgs-15.jpg"></a>
+                        <a href="https://open.spotify.com/track/5VnXCd2798p4SQPGab6jTf?si=9b46fb667df14490" data-artist="yuvan"data-lang="tamil"><img src="../static/Sad_Songs/bgs-7.jpg"></a>
+                        <a href="https://open.spotify.com/track/0hp1Bp3nUOKqu7Of0Mc5d1?si=8eef05f10ab94f06" data-artist="spb"data-lang="tamil"><img src="../static/Sad_Songs/bgs-8.jpg"></a>
+                        <a href="https://open.spotify.com/track/0523YjBhkcVoAGONOUFrf6?si=2905e66e688048d3" data-artist="spb"data-lang="tamil"><img src="../static/Sad_Songs/bgs-26.jpg"></a>
+                        <a href="https://open.spotify.com/track/6H1hnJRQOGQ9djPL3jNu9G?si=ae580106ee8440da"  data-artist="gvprakash"data-lang="tamil"><img src="../static/Sad_Songs/bs-6.jpg"></a>
+                        <a href="https://open.spotify.com/track/6iolBQ6ZcLv6gDSo7NDLGX?si=29c36151ccfd4dee"  data-artist="arrahman"data-lang="tamil"><img src="../static/Sad_Songs/bs-12.jpg"></a>
+                        <a href="https://open.spotify.com/track/6OZk7KDumL8Q71Z1veRWX5?si=ab094c05011a42a3"  data-artist="sachin"data-lang="malayalam"><img src="../static/Sad_Songs/bs-34.jpg"></a>
+                        <a href="https://open.spotify.com/track/0t0mHozF8Xsif9w8bemh9D?si=742033fa35484748"  data-artist="anirudh"data-lang="tamil"><img src="../static/Sad_Songs/bs-4.jpg"></a>
+                        <a href="https://open.spotify.com/track/5QW9K4A1gMnIi94YUxtsfM?si=9dbca445ec2b46d5"  data-artist="sachin"data-lang="hindi"><img src="../static/Sad_Songs/bs-21.jpg"></a>
+                        <a href="https://open.spotify.com/track/4Ndcwn2iAt1MdU6lpw24ZQ?si=0dc6a7060ae6453e"  data-artist="anirudh"data-lang="tamil"><img src="../static/Sad_Songs/bs-3.jpg"></a>
+                        <a href="https://open.spotify.com/track/6B0kf41uBOcQAhwTxwdYlV?si=9586a07803d24d6d"  data-artist="arrahman"data-lang="tamil"><img src="../static/Sad_Songs/bs-35.jpg"></a>
+                        <a href="https://open.spotify.com/track/16jOVIIrpo7XV8KOnx4ZwX?si=b6308a38b583402c"  data-artist="spb"data-lang="tamil"><img src="../static/Sad_Songs/bgs-56.jpg"></a>
+                        <a href="https://open.spotify.com/track/0YtVGKM24g2f6BauOgB7tW?si=0468c57f4204462e"  data-artist="spb"data-lang="tamil"><img src="../static/Sad_Songs/bgs-57.jpg"></a>
+                        <a href="https://open.spotify.com/track/0PC0m0J5qulo8Z6c5zrnX2?si=195b0e52d9194ef7"  data-artist="spb"data-lang="tamil"><img src="../static/Sad_Songs/bgs-58.jpg"></a>
+                        <a href="https://open.spotify.com/track/5KW8kOHmXqkDEdj6JyP3dJ?si=a3b159ba08c044fa" data-artist="ilayaraja"data-lang="tamil"><img src="../static/Sad_Songs/img4.jpg"></a>
+                        <a href="https://open.spotify.com/track/30yySOIXHZYx94sLAySy2j?si=c8c5fe35316b4a43"  data-artist="arrahman"data-lang="hindi"><img src="../static/Sad_Songs/bgs-80.jpg"></a>
+                        <a href="https://open.spotify.com/track/4NQBqInyE7zvjIiP4j1dmy?si=2ecfb236afaa44a0" data-artist="anirudh"data-lang="tamil"><img src="../static/Sad_Songs/bgs-30.jpg"></a>
+                        <a href="https://open.spotify.com/track/2zpzbfEexXPmymYNWU1Bha?si=1e7b359df81c457b"  data-artist="vishal"data-lang="telugu"><img src="../static/Sad_Songs/bs-24.jpg"></a>
+                        <a href="https://open.spotify.com/track/7hMKAmUlUUYa5qEiHWK4bk?si=35404b83ba0d4330"  data-artist="gvprakash"data-lang="tamil"><img src="../static/Sad_Songs/bgs-47.jpg"></a>
+                        <a href="https://open.spotify.com/track/6NwEpX2JUWHVKWfDDfcqC4?si=31352a30d3074180" data-artist="anirudh"data-lang="tamil"><img src="../static/Sad_Songs/bgs-1.jpg"></a>
+                        <a href="https://open.spotify.com/track/6aPMWbbdhDhiJHlknZb9Yx?si=bc097e68dffe43f2"  data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/bgs-72.jpg"></a>
+                        <a href="https://open.spotify.com/track/4LO5DjN6Tp3UkUvgESuy2t?si=2a8245b8a4a14327"  data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/bgs-73.jpg"></a>
+                        <a href="https://open.spotify.com/track/6Ro16W3cg8dg7um9aRLWAj?si=bda78e7281704657" data-artist="gvprakash"data-lang="tamil"><img src="../static/Sad_Songs/bgs-48.jpg"></a>
+                        <a href="https://open.spotify.com/track/3gOXq3FPPesm7VLPKmef6j?si=99f4faa9bc47471c"  data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/bgs-49.jpg"></a>
+                        <a href="https://open.spotify.com/track/4EkYBqzQCGDVNoL3NU4WZo?si=e768e8e7641b49f6"  data-artist="gvprakash"data-lang="tamil"><img src="../static/Sad_Songs/bgs-50.jpg"></a>
+                        
+                        <a href="https://open.spotify.com/track/14FlUUB2fyxHFLQ7PYGrqp?si=e16906ea456b47db" data-artist="yuvan"data-lang="tamil"><img src="../static/Sad_Songs/bgs-43.jpg"></a>
+                        <a href="https://open.spotify.com/track/2gp0OtnltLdrcNhKHVL2qM?si=bee54521358d4080" data-artist="anirudh"data-lang="tamil"><img src="../static/Sad_Songs/bgs-29.jpg"></a>
+                        <a href="https://open.spotify.com/track/6dZCuf6SGn2rh9q94JBLlv?si=b7400cf111024fc0" data-artist="yuvan"data-lang="tamil"><img src="../static/Sad_Songs/bgs-16.jpg"></a>
+                     
+                        <a href="https://open.spotify.com/track/5OMUXgfXsSukZ0zxelpC3b?si=d29393dd72064ee9" data-artist="arrahman"data-lang="hindi"><img src="../static/Sad_Songs/bgs-51.jpg"></a>
+                        <a href="https://open.spotify.com/track/5hHvF6t5S6sqn2hvr7qGjD?si=70229058400b4b52"  data-artist="gvprakash"data-lang="tamil"><img src="../static/Sad_Songs/bgs-52.jpg"></a>
+                        <a href="https://open.spotify.com/track/6bJHu2TZCO7TPZ7YOTgdlQ?si=7005493f47b44e0e"  data-artist="gvprakash"data-lang="tamil"><img src="../static/Sad_Songs/bgs-53.jpg"></a>
+
+                        <a href="https://open.spotify.com/track/42NWXVKyoMuu3lTJicyZCn?si=faa41ad0c2d64c39"  data-artist="spb"data-lang="tamil"><img src="../static/Sad_Songs/bgs-54.jpg"></a>
+                        
+                        <a href="https://open.spotify.com/track/6vUAD6luVqoRWXIFamGGjW?si=6f69ad042b994313"  data-artist="spb"data-lang="tamil"><img src="../static/Sad_Songs/bgs-59.jpg"></a>
+
+                        <a href="https://open.spotify.com/track/2cDyQDAoP0cPQXzaviXu2f?si=f3f15ba7fb354fe2"  data-artist="anirudh"data-lang="telugu"><img src="../static/Sad_Songs/bgs-60.jpg"></a>
+                        <a href="https://open.spotify.com/track/05dYneZZZ2mytSmnsvzFoW?si=6225f1821c344232"  data-artist="anirudh"data-lang="telugu"><img src="../static/Sad_Songs/bgs-61.jpg"></a>
+                        <a href="https://open.spotify.com/track/3XEoa8R8XtnVV67uurLZsJ?si=c3b93b98a23f4292"  data-artist="yuvan"data-lang="tamil"><img src="../static/Sad_Songs/bgs-62.jpg"></a>
+                        <a href="https://open.spotify.com/track/7vR8sGqVg5HMEOEvECdzlQ?si=87f47a9d0332411b"  data-artist="yuvan"data-lang="tamil"><img src="../static/Sad_Songs/bgs-63.jpg"></a>
+                       
+
+                        <a href="https://open.spotify.com/track/6mTvwBzWTGDOVeCNQEqtOE?si=300971c0ad4f4cd7"  data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/bgs-71.jpg"></a>
+                        
+                        <a href="https://open.spotify.com/track/5O932cZmzOZGOGZz9RHx20?si=b4702cc9afdc4724"  data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/bgs-76.jpg"></a>
+                        <a href="https://open.spotify.com/track/2vVhhirqH0IdsUoPzumDCa?si=d779fb4fdd254114"  data-artist="spb"data-lang="tamil"><img src="../static/Sad_Songs/bgs-55.jpg"></a>
+                      
+                        <a href="https://open.spotify.com/track/018eOid2aGaPdxon7T6GsC?si=566e3210601d4fe2"  data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/bgs-70.jpg"></a>
+                     
+                        <a href="https://open.spotify.com/track/6V0cw3ZOtm5oQJrSv4QluQ?si=5c2ae8b5f5ae4529"  data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/bgs-74.jpg"></a>
+                        <a href="https://open.spotify.com/track/0CVfovmUv7BnemOyTtOcbL?si=59e36215f85244db"  data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/bgs-75.jpg"></a>
+                        <a href="https://open.spotify.com/track/7fccqI6j1XXpVpAO5gkDXL?si=7efc1b786ae74f39"  data-artist="sachin"data-lang="malayalam"><img src="../static/Sad_Songs/bgs-90.jpg"></a>
+
+                        <a href="https://open.spotify.com/track/6H40OsBLyTtAHIrTI9dU5M?si=d4f6e5542f5b4a2e"  data-artist="sachin"data-lang="malayalam"><img src="../static/Sad_Songs/bgs-91.jpg"></a>
+                        <a href="https://open.spotify.com/track/21gvcUgUCcWWbOvGtw9wB6?si=2ff38bfbf8134a74"  data-artist="sachin"data-lang="malayalam"><img src="../static/Sad_Songs/bg-92.jpg"></a>
+
+
+                        <a href="https://open.spotify.com/track/6zdikHQs2PBFgGIZBxqOeV?si=7ae7da28c4ec46b6" data-artist="anirudh"data-lang="tamil"><img src="../static/Sad_Songs/img1.jpg"></a>
+                        <a href="https://open.spotify.com/track/1nIKu3frmTmAoeMb2vCzkg?si=72a4b59e28774d29" data-artist="arraham"data-lang="tamil"><img src="../static/Sad_Songs/img2.jpg"></a>
+                        <a href="https://open.spotify.com/track/2GYzXSeNa3Y0BfIfS1VJj3?si=a0364bd942614997" data-artist="sidsriram"data-lang="tamil"><img src="../static/Sad_Songs/img3.jpg"></a>
+                        <a href="https://open.spotify.com/track/5KW8kOHmXqkDEdj6JyP3dJ?si=a3b159ba08c044fa" data-artist="sidsriram"data-lang="tamil"><img src="../static/Sad_Songs/img4.jpg"></a>
+                        <a href="https://open.spotify.com/track/3EeyaFOWvqer0qaEMrFyAz?si=911b00b68a9b4584" data-artist="yuvan"data-lang="tamil"><img src="../static/Sad_Songs/img5.jpg"></a>
+                        <a href="https://open.spotify.com/track/4eFnk661RcdOuH9ajiTO3j?si=c3390196deab4e93" data-artist="mohammad irfan"data-lang="hindi"><img src="../static/Sad_Songs/img6.jpg"></a>
+                        <a href="https://open.spotify.com/track/3XWBGyt7m2rZAjEj0awWnw?si=793873de23ec499a" data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/img7.jpg"></a>
+                        <a href="https://open.spotify.com/track/1sbW5E7w8tnqpYk0Frx8QG?si=01851668aaea46a3" data-artist="arraham"data-lang="hindi"><img src="../static/Sad_Songs/img8.jpg"></a>
+
+
+                        <a href="https://open.spotify.com/track/6UgcN95w7vQxkR8sEFmwHG?si=83a31ad5b8ba4b7b" data-artist="arijit"data-lang="hindi"><img src="../static/Sad_Songs/img9.jpg"></a>
+                        
+                    
+  
+                        
+
+                        
+                        
+                
+            
+            </div>
+        
+       
+    </div>
+
+    
+</body>
+</html>

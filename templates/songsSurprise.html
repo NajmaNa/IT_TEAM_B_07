@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise_Songs</title>
+    <!-- <link rel="stylesheet" href="happy.css"> -->
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+    
+        body{
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            /* background-image: linear-gradient(rgba(192, 190, 236, 0.5),rgba(224, 224, 235, 0.5)),url(Images/img4.png);
+            background-size: cover;
+            background-repeat: no-repeat; */
+        }
+    
+        img{
+            width: 300px;
+            height: auto;
+            margin: 5px;
+            border: 6px double white;
+        }   
+    
+        .img{
+            width: 500px;
+            height: 500px;
+            border: 4px solid black;
+            margin: 5px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+        }
+        .header{
+            width: 100%;
+            height: 100vh;
+            background-image: url(../static/bgg.jpg);
+            background-position: center;
+            background-size: cover;
+            overflow-x: hidden;
+            justify-content: center;
+            text-align: center;
+        }
+        input {
+            font: inherit;
+            padding: 10px;
+    
+          }
+          #text{
+            color:white;
+            font-family:"cursive"
+          }
+        .box{
+            box-shadow: 0 0 20px 2px rgba(0,0,0,0.1);
+            transition: 1s;
+        }
+        .box img:hover{
+            transform: scale(1.1);
+            z-index: 2;
+        }
+          .btn:hover{
+            background-color: rgb(0, 195, 255);
+        }
+        .btn{
+            border: 2px solid #fff;
+            padding: 10px 35px;
+            border-radius: 30px;
+            margin-right: 15px;
+            font-weight: 700;
+        }
+        select
+    {
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid ;
+        border-radius: 5px;
+    }
+        </style>
+    
+</head>
+
+<body>
+    <div class="header">
+        <div class="box" id="songsContainer">
+            <br><br>
+            <label style="font-size: 30px" id="text" for="languageFilter">Language:</label>
+            <input type="text" id="languageFilter" placeholder="Language"><br><br>
+           <label style="font-size: 30px" id="text" for="artistFilter">Artist Name:</label>
+            <input type="text" id="artistFilter" placeholder="Artist Name"><br><br>
+            <button onclick="filterSongs()" class="btn">Filter</button><br><br>
+            <div class="box songs-container" id="songsContainer">
+                <a href="https://open.spotify.com/track/6S6DFMfhwIZYHUffVzuWOI?si=8cef0751167740a3" data-lang="tamil" data-artist="krishh"><img src="../static/Surprising_Songs/bg-1.jpeg"></a>
+                <a href="https://open.spotify.com/track/1qfanYrmrh7xDSvt15acZ3?si=acb9b6fe40594185"data-lang="tamil" data-artist="Karthik"><img src="../static/Surprising_Songs/bg-2.jpeg"></a>
+                <a href="https://open.spotify.com/track/1YSeBt82FA3TKFarDumyH9?si=85042a60524b4063"data-lang="tamil" data-artist="vijay"><img src="../static/Surprising_Songs/bg-3.jpeg"></a>
+                <a href="https://open.spotify.com/track/3KeMulXbLDJBQdY5PZbGEh?si=a19b0c4a1b51467f"data-lang="hindi" data-artist="ar rahman"><img src="../static/Surprising_Songs/bg-4.jpeg"></a>
+                <a href="https://open.spotify.com/track/6k3XXCE1ZzwevQlxf8dNaw?si=bea7790f2bfa4087"data-lang="hindi" data-artist="amit trivedi"><img src="../static/Surprising_Songs/bg-5.jpeg"></a>
+                <a href="https://open.spotify.com/track/7heMX7gyHP0mhTlNgd7Lxd?si=18f942d5f322401a"data-lang="hindi" data-artist="ar rahman"><img src="../static/Surprising_Songs/bg-6.jpeg"></a>
+                <a href="https://open.spotify.com/track/3UaP2PQwhA31keZXt7oPLA?si=ae43222d33a644f3"data-lang="hindi" data-artist="Vishal-shekhar"><img src="../static/Surprising_Songs/bg-7.jpeg"></a>
+                <a href="https://open.spotify.com/track/7BjQd0sfYsMGVrTpRdBNTT?si=538a638d80404c94"data-lang="hindi" data-artist="pritam"><img src="../static/Surprising_Songs/bg-8.jpeg"></a>
+                <a href="https://open.spotify.com/track/3xMHXmedL5Rvfxmiar9Ryv?si=bdce94cae1c64196"data-lang="hindi" data-artist="anirudh"><img src="../static/Surprising_Songs/bg-9.jpeg"></a>
+                <a href="https://open.spotify.com/track/20xkpWij36oGYQuE6yXVLN?si=2d9ff1daef974467"data-lang="tamil" data-artist="HipHop Tamizha"><img src="../static/Surprising_Songs/bg-10.jpeg"></a>
+                <a href="https://open.spotify.com/track/21So81Yl6lkVgNWMs33JtV?si=69f4efeab6704bff"data-lang="tamil" data-artist="llaiyaraaja"><img src="../static/Surprising_Songs/bg-12.jpeg"></a>
+                <a href="https://open.spotify.com/track/21r0QnhYxsxYUsoov5o0IF?si=5cd22cf713114f3e"data-lang="tamil" data-artist="yuvan"><img src="../static/Surprising_Songs/bg-11.jpeg"></a> 
+                <a href="https://open.spotify.com/track/5QAj9kZouI8eSwqDqtywNr?si=e924fcd742e648be"data-lang="tamil" data-artist="kj yesudas"><img src="../static/Surprising_Songs/bg-13.jpeg"></a>            
+                <a href="https://open.spotify.com/track/2Hf0Puh1w4HvTae2HSw6Hu?si=b5050175aa594e78"data-lang="tamil" data-artist="hariharan"><img src="../static/Surprising_Songs/bg-14.jpeg"></a> 
+                <a href="https://open.spotify.com/track/6gwU5xHdDoUDKofM4zrtWQ?si=d74fe26b616640e8"data-lang="tamil" data-artist="kamal haasan"><img src="../static/Surprising_Songs/bg-15.jpeg"></a> 
+
+                <a href="https://open.spotify.com/track/3BpzVElcubHiz9thWkHxrN"data-lang="malayalam" data-artist="rex vijayan"><img src="../static/Surprising_Songs/bg-16.jpeg"></a>
+                <a href="https://open.spotify.com/track/5sfddXvR3E3EY6pDqA0zgo"data-lang="malayalam" data-artist="Shaan Rahman"><img src="../static/Surprising_Songs/bg-17.jpg"></a> 
+                <a href="https://open.spotify.com/track/6VJPFl2Jf1tnGhwaTgv04v"data-lang="malayalam" data-artist="raghu dixit"><img src="../static/Surprising_Songs/bg-18.jpeg"></a>            
+                <a href="https://open.spotify.com/track/2uddWiAVaH4owVLOHZgjGp"data-lang="malayalam" data-artist="Karthik"><img src="../static/Surprising_Songs/bg-19.jpg"></a> 
+                <a href="https://open.spotify.com/track/5sfddXvR3E3EY6pDqA0zgo"data-lang="malayalam" data-artist="vineeth sreenivasan"><img src="../static/Surprising_Songs/bg-20.jpg"></a> 
+
+                <a href="https://open.spotify.com/track/6obKaXHU2avqfLZFPjGm4K"data-lang="telugu" data-artist="sid sriram"><img src="../static/Surprising_Songs/bg-21.jpg"></a>
+                <a href="https://open.spotify.com/track/5JnXwEckWO0oFijOyTZDLf"data-lang="telugu" data-artist="sid sriram"><img src="../static/Surprising_Songs/bg-22.jpg"></a> 
+                <a href="https://open.spotify.com/track/4pL68JYoexCl81uq3bubFD"data-lang="telugu" data-artist="haricharan"><img src="../static/Surprising_Songs/bg-23.jpg"></a>            
+                <a href="https://open.spotify.com/track/6DND2TO9wBkkCKbjEUICqm"data-lang="telugu" data-artist="ks chithra"><img src="../static/Surprising_Songs/bg-24.jpg"></a> 
+                <a href="https://open.spotify.com/track/6vsPBbLGfeLraBanG4HJaR"data-lang="telugu" data-artist="kalyani malik"><img src="../static/Surprising_Songs/bg-25.jpg"></a> 
+                <a href="https://open.spotify.com/track/3t3wsY5IdLVzB9WidegJSU"data-lang="hindi" data-artist="Shreya Ghoshal"><img src="../static/Surprising_Songs/bg-26.jpg"></a> 
+                
+            </div>
+        </div></div>
+        <script>
+            function filterSongs() {
+                // Get the language and artist name entered by the user
+                var language = document.getElementById("languageFilter").value.toLowerCase();
+                var artistName = document.getElementById("artistFilter").value.toLowerCase();
+        
+                // Get all song links
+                var songLinks = document.querySelectorAll('.box a');
+        
+                // Loop through each song link and hide/show based on language and artist name
+                songLinks.forEach(function (link) {
+                    var linkLanguage = link.getAttribute('data-lang').toLowerCase();
+                    var linkArtist = link.getAttribute('data-artist').toLowerCase();
+        
+                    var showLanguage = linkLanguage.includes(language) || language === "";
+                    var showArtist = linkArtist.includes(artistName) || artistName === "";
+        
+                    if (showLanguage&&showArtist ) {
+                        link.style.display = 'inline-block';
+                    } else {
+                        link.style.display = 'none';
+                    }
+                });
+            }
+        </script>
+    
+</body>
+</html>
